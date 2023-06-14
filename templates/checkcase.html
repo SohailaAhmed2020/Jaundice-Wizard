@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Check Case</title>
+         <link rel="stylesheet" href="{{url_for('static', filename ='checkcase_nav1.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        <section class="header">
+                <nav>
+                  <img src="/static/images/logo.png" class="photo" alt="this is a logo">
+                  <input type="checkbox" id="check">
+                  <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                  </label>
+                 <label class="logo">Jaundice Wizard</label>
+                 <ul>
+                  <li><a class=""  href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                  <li><a  href="/checkcasenull"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+                  <li><a  href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>logIN</a></li>
+                  <li><a  href="/signin"><i class="fa fa-registered" aria-hidden="true"></i>Regriste</a></li>
+                </ul>
+            </nav>
+            <script>
+                let subMenu = document.getElementById("subMenu");
+                
+                function toggleMenu(){
+                    subMenu.classList.toggle("open-menu");
+                }
+                </script>
+        <div>
+            <h1>Check Case</h1>
+            <form action="/CheckNull" method="post" enctype="multipart/form-data">
+                <div class="Card-details">
+                    <div class="Card-Box">
+                        <div class="inputCase">
+                            <input
+                            type="text"
+                            required="required"
+                            name="CaesName"
+                            >
+                            <span>CaseName</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <input type="file"  id="file" accept="image/*" name="Image" hidden>
+                        <div class="img-area" data-img="">
+                            <i class='bx bxs-cloud-upload icon'></i>
+                            <h3>Upload Image</h3>
+                            <p>Image size must be less than <span>20MB</span></p>
+                        </div>
+                        <button class="select-image" required="required">Select Image</button>
+                    </div>
+                    
+                    <br>
+                    <div class="Card-Box">
+                        <button type="reset" style="margin-right: 10px;" id="but">reset</button>
+                        <button type="submit" id="butt">Scan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    </section>
+</body>
+</html>

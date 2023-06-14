@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width , intial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='main_nav2.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>juindice app</title>
+</head>    
+<body>
+    <section class="header">
+        
+        <nav>
+            <img src="/static/images/logo.png" class="photo">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+           <label class="logo">Jaundice Wizard</label>
+           <ul>
+            <li><a class="" href="/main2"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="/checkcase"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+            <li><a href="/entercase"><i class="fa fa-stethoscope" aria-hidden="true"></i>Entercase</a></li>
+           </ul>
+           <img src="/static/images/profile.png" class="user-pic" onclick="toggleMenu()">
+ <div class="sub-menu-wrap" id="subMenu">
+  <div class="sub-menu">
+      <div class="user-info">
+          <img src="/static/images/profile.png">
+          <p>{{user_name}}</p> 
+      </div>
+      <hr>
+
+      <a href="/edit_page" class="sub-menu-link">
+          <img src="/static/images/setting.png">
+          <p>Edit Profile</p>
+          <span> > </span>
+      </a>
+
+      <a href="/logout" class="sub-menu-link">
+          <img src="/static/images/logout.png">
+          <p>Logout</p>
+          <span> > </span>
+      </a>
+
+  </div>
+ </div>
+          </nav>
+          
+        <script>
+          let subMenu = document.getElementById("subMenu");
+          
+          function toggleMenu(){
+              subMenu.classList.toggle("open-menu");
+          }
+      </script>
+           
+       
+        <div class="text">
+            
+           <h1>Neonatal Jaundice Diagnosis</h1>
+           <p>Checking for Neonatal Juindice no Longer Requires a Visit to a Doctor. <br>Just Upload the Photo , Fill in 
+            the Information and Get the Result Immediately!
+           </p>
+
+        </div>
+
+    </section>
+    <!-- information -->
+    <section class="know">
+       
+        <div class="row">
+            <div class="info">
+                
+                    <h3>What is neonatal jaundice ?</h3>
+                   
+                    <p>
+                        Neonatal jaundice is a common condition that affects newborn babies,
+                         characterized by high levels of bilirubin in the blood,
+                          which leads to yellowing of the skin and whites of the eyes
+                          . Bilirubin is a substance produced when red blood cells break down,
+                           and it is normally processed by the liver and eliminated from the body.
+                            However, in newborns, the liver may not be fully developed, leading to a buildup of bilirubin.  Most cases of neonatal jaundice are harmless and resolve without treatment within a few weeks
+                        . However, in severe cases, high levels of bilirubin can cause brain damage or other complications,
+                         so it is important to monitor and manage the condition appropriately.
+                          Treatment options may include phototherapy (exposure to special lights that help break down bilirubin),
+                           exchange transfusion (replacing the baby's blood with donor blood), or other measures as needed.
+                        
+                        If you suspect that your baby has jaundice,
+                         it is important to talk to your healthcare provider,
+                          who can perform a physical exam and evaluate the baby's bilirubin levels.
+                </p>
+            </div>
+           
+
+        </div>
+    </section>
+    <section class="know">
+        <div class="row">
+        <div class="info">
+            <h3>How to use our website ?</h3>
+            <p>
+             To use our neonatal jaundice diagnosis website,<br>
+                 simply visit the homepage and complete the assessment  by entering the data about your baby's symptoms, age, and other relevant information<br>
+                 . Once you submit the form, our system will analyze the data and provide a personalized assessment of the likelihood that your baby has neonatal jaundice.<br>
+                  This assessment is based on current medical guidelines and algorithms used by healthcare professionals to diagnose neonatal jaundice.<br>
+                   While our website can provide helpful insights and guidance, it is important to note that it does not replace the advice and expertise of a qualified healthcare provider. <br>
+                If you have concerns about your baby's health, we recommend consulting with a healthcare professional as soon as possible.
+            </p>
+        </div>
+      </div>
+    </section>
+
+
+</body>
+</html>

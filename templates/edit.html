@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit Form</title>
+  <link rel="stylesheet" href="{{url_for('static', filename ='edit.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <section>
+  <nav>
+    <img src="/static/images/logo.png" class="photo" alt="this is a logo">
+   <label class="logo">Jaundice Wizard</label>
+   <ul>
+    <li><a class="" href="/main2"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+    <li><a href="/checkcase"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+    <li><a href="/entercase"><i class="fa fa-stethoscope" aria-hidden="true"></i>Entercase</a></li>
+   </ul>
+   <img src="/static/images/profile.png" class="user-pic" onclick="toggleMenu()">
+<div class="sub-menu-wrap" id="subMenu">
+<div class="sub-menu">
+<div class="user-info">
+              <img src="/static/images/profile.png">
+              <p>{{user_name}}</p> 
+</div>
+<hr>
+
+          <a href="/edit_page" class="sub-menu-link">
+              <img src="/static/images/setting.png">
+  <p>Edit Profile</p>
+  <span> > </span>
+</a>
+
+<a href="/logout" class="sub-menu-link">
+  <img src="/static/images/logout.png">
+  <p>Logout</p>
+  <span> > </span>
+</a>
+
+</div>
+</div>
+  </nav>
+  
+<script>
+  let subMenu = document.getElementById("subMenu");
+  
+  function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+  }
+</script>
+    <div >
+    <div class="edit">
+  <h1>Edit</h1>
+  <form action="/update_page" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br><br>
+    
+    <label for="name">phone:</label>
+    <input type="text" id="phone" name="phone" required><br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+</section>
+</body>
+
+</html>

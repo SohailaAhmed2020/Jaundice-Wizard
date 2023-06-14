@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('images/baby.jpg');
+    background-color: #9dc1c1;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+
+.text{
+   
+    width: 90;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50% ,-50%);
+}
+.text h1{
+    font-size: 90px;
+  margin-top: 80px;
+}
+.text p{
+    font-size: 20px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: #fff;
+}
+
+ 
+
+.know{
+    width: 100%;
+    margin: auto;
+    text-align:center;
+    padding-top: 100px;
+
+}
+
+
+.row{
+    margin: 5% ;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.info{
+    background-image: url('images/teddies.jpg');
+    background-size:contain;
+background: radial-gradient(#fff, #ffd6d6);
+    width:100%;
+    height: 100%;
+    min-height: 500px;
+     border: 1px solid black;
+  padding: 10px;
+ 
+  
+  
+}
+
+.info p{
+    
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 50px;
+    
+ 
+
+
+}
+.info h3{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 10px;
+    padding-bottom: 20px;
+    font-family: cursive;
+}
+label.logo{
+	color: #0d47a1;
+	font-size: 25px;
+	width: 300px;
+	padding: 0 50px;
+	font-weight: bolder ;
+	font-size :19px; 
+	line-height: 20px;
+	font-family:'Courier New', Courier, monospace
+  }
+  .photo{
+	position: absolute;
+	height: 50px;
+	left: 10px;
+	width: 80px;
+	filter: brightness(70%);
+  
+  }
+  nav{
+	background: whitesmoke;
+	width: 100%;
+	height: 70px;
+	padding: 10px 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+  }
+  
+  nav ul{
+	float: right;
+	margin-right: 20px;
+	width: 100%;
+	text-align: right;
+  }
+  nav ul li{
+	display: inline-block;
+	list-style: none;
+	line-height: 80px;
+	margin: 5px 10px;
+  position: relative;
+ right: 160px;
+  }
+  nav ul li a{
+	color: black;
+	text-decoration: none;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	font-style:normal;
+	font-family:'Courier New', Courier, monospace;
+	font-weight: bold;
+  }
+  
+  nav ul li a:hover{
+	color: black;
+  }
+  a.active,a:hover{
+	background: #0d47a1;
+	transition: 1s;
+  }
+  
+  .user-pic{
+	width: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-left: 30px;
+  }
+  .sub-menu-wrap{
+	position: absolute;
+	top: 100%;
+	right: 10%;
+	width: 320px;
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.5s;
+  }
+  .sub-menu-wrap.open-menu{
+	max-height: 400px;
+  }
+  .sub-menu{
+	background: white;
+	padding: 20px;
+	margin: 10px;
+  }
+  .user-info{
+	display: flex;
+	align-items: center;
+  }
+  .user-info h3{
+	font-weight: bold;
+  }
+  .user-info img{
+	width: 60px;
+	border-radius: 50%;
+	margin-right: 15px;
+  }
+  .sub-menu hr{
+	border: 0;
+	height: 2px;
+	width: 100%;
+	background: #ccc;
+	margin: 15px 0 10px;
+  }
+  .sub-menu-link{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #525252;
+	margin: 12px 0;
+  }
+  .sub-menu-link p{
+	width: 100%;
+  }
+  .sub-menu-link img{
+	width: 40px;
+	background: #e5e5e5;
+	border-radius: 50%;
+	padding: 8px;
+	margin-right: 15px;
+  }
+  .sub-menu-link span{
+	font-size: 22px;
+	transition: transform 0.5s;
+  }
+  .sub-menu-link:hover span{
+	transform: translate(5px);
+  }
+  .sub-menu-link:hover p{
+	font-weight: 600;
+  }
+  
+  .checkbtn{
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+  }
+  #check{
+	display: none;
+  }
+  @media (max-width: 952px){
+	label.logo{
+	  font-size: 30px;
+	  padding-left: 50px;
+	}
+	nav ul li a{
+	  font-size: 16px;
+	}
+  }
+  @media (max-width: 550px){
+	.checkbtn{
+	  display: block;
+	}
+	ul{
+	  position: fixed;
+	  width: 100%;
+	  height: 100vh;
+	  background: #2c3e50;
+	  top: 80px;
+	  left: -100%;
+	  text-align: center;
+	  transition: all .5s;
+	}
+	nav ul li{
+	  display: block;
+	  margin: 50px 0;
+	  line-height: 30px;
+	}
+	nav ul li a{
+	  font-size: 20px;
+	}
+	a:hover,a.active{
+	  background: none;
+	  color: #d4421e;
+	}
+	#check:checked ~ ul{
+	  left: 0;
+	}
+  }

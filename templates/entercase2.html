@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Enter Case</title>
+        <link rel="stylesheet" href="{{url_for('static', filename ='entercase_nav2.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section class="header">
+          <nav>
+            <img src="/static/images/logo.png" class="photo">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+           <label class="logo">Jaundice Wizard</label>
+           <ul>
+            <li><a class="" href="/main2"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="/checkcase"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+            <li><a href="/entercase"><i class="fa fa-stethoscope" aria-hidden="true"></i>Entercase</a></li>
+           </ul>
+           <img src="/static/images/profile.png" class="user-pic" onclick="toggleMenu()">
+           <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="/static/images/profile.png">
+                    <p>{{user_name}}</p>
+                </div>
+                <hr>
+    
+                <a href="/edit_page" class="sub-menu-link">
+                    <img src="/static/images/setting.png">
+                    <p>Edit Profile</p>
+                    <span>  </span>
+                </a>
+    
+                <a href="/logout" class="sub-menu-link">
+                    <img src="/static/images/logout.png">
+                    <p>Logout</p>
+                    <span>  </span>
+                </a>
+    
+            </div>
+           </div>
+          </nav>
+        <script>
+          let subMenu = document.getElementById("subMenu");
+          
+          function toggleMenu(){
+              subMenu.classList.toggle("open-menu");
+          }
+      </script>
+        <div  id="d1">
+            <h1>Enter Case</h1>
+            <form action="/save" method="post" enctype="multipart/form-data" >
+                <div class="Card-details"  id="d2">
+                    <div class="Card-Box"  id="d3">
+                        <div class="inputCase"  id="d4">
+                            <input
+                            type="text"
+                            required="required"
+                            name = "CaesName"
+                        >
+                        <span>CaseName</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <input type="file" id="file" accept="image/*" name="Image" hidden>
+                        <div class="img-area" data-img="">
+                            <i class='bx bxs-cloud-upload icon'></i>
+                            <h3>Upload Image</h3>
+                            <p>Image size must be less than <span>20MB</span></p>
+                        </div>
+                        <button class="select-image">Select Image</button>
+                    </div>
+                    <br>
+                    <div class="Card-Box" class="main-container">
+                        <h2 id="hh">baby has jaundice </h2>
+                        <div class="radio-buttons">
+                            <label class="custom-radio">
+                              <input type="checkbox" name="check-jaundice" value="1" />
+                              <span class="radio-btn"
+                                ><i class="las la-check"></i>
+                                <div class="hobbies-icon">
+                                    <i class="las la-frown"></i>
+                                  <h3>yes,baby has</h3>
+                                </div>
+                              </span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="checkbox" name="check-no-jaundice" value="0" />
+                                <span class="radio-btn"
+                                  ><i class="las la-check"></i>
+                                  <div class="hobbies-icon">
+                                    <i class="las la-smile"></i>
+                                    <h3>No,baby hasnot</h3>
+                                </div>
+                                </span>
+                              </label>
+                        </div>
+                    <br>
+                    <div class="Card-Box">
+                        <button type="reset" style="margin-right: 10px;" id="but">reset</button>
+                        <button type="submit" id="butt">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        </section>
+    </body>
+</html>

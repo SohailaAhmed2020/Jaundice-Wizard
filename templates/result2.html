@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Result | Assessment</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+         <link rel="stylesheet" href="{{url_for('static', filename ='result_nav2.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+        <script type="text/javascript" language="JavaScript">
+        window.onload = function () {
+        document.getElementById("download")
+            .addEventListener("click", () => {
+                const invoice = this.document.getElementById("assess");
+                console.log(invoice);
+                console.log(window);
+                var opt = {
+                    margin: 1,
+                    filename: 'Jaundance_Assessment.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+                };
+                html2pdf().from(invoice).set(opt).save();
+            })
+       }</script>
+       <style>
+               nav {
+    font-family: sans-serif;
+                   }
+
+     .navbar-brand {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+                   }
+
+     @media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+                               }
+    .container {
+    max-width: 960px;
+               }
+               .pricing-header {
+    max-width: 700px;
+                               }
+
+    .card-deck .card {
+    min-width: 220px;
+                     }
+
+    .themed-container {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 123, 255, .15);
+    border: 1px solid rgba(0, 123, 255, .2);
+                      }
+       </style> 
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <img src="/static/images/logo.png" class="photo">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                  <i class="fas fa-bars"></i>
+                </label>
+               <label class="logo">Jaundice Wizard</label>
+               <ul>
+                <li><a class="active" href="/main2"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                <li><a href="/checkcase"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+                <li><a href="/entercase"><i class="fa fa-stethoscope" aria-hidden="true"></i>Entercase</a></li>
+               </ul>
+               <img src="/static/images/profile.png" class="user-pic" onclick="toggleMenu()">
+     <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+          <div class="user-info">
+              <img src="/static/images/profile.png">
+              <p>{{user_name}}</p> 
+          </div>
+          <hr>
+
+          <a href="/edit_page" class="sub-menu-link">
+              <img src="/static/images/setting.png">
+              <p>Edit Profile</p>
+              <span> > </span>
+          </a>
+
+          <a href="/logout'" class="sub-menu-link">
+              <img src="/static/images/logout.png">
+              <p>Logout</p>
+              <span> > </span>
+          </a>
+
+      </div>
+     </div>
+              </nav>
+              
+            <script>
+              let subMenu = document.getElementById("subMenu");
+              
+              function toggleMenu(){
+                  subMenu.classList.toggle("open-menu");
+              }
+          </script>
+        <div id="d1">
+            <span>Result</span>
+            <form>
+                <div class="Card-details" id="d2">
+                    <div class="Card-Box" id="d3">
+                        <div id="assess">
+                            <div class="container themed-container" id="d5"><h1 style="text-align: center;">{{prediction_text}}</h1></div>
+                            <p style="text-align: center;">Click <a href="https://www.mayoclinic.org/diseases-conditions/infant-jaundice/symptoms-causes/syc-20373865" style="color: black;" target="_blank">here</a> to learn more about jaundance Disease</p>
+                            </div>
+                            <br/>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-lg" id="download" type="button">Download</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </body>
+</html>

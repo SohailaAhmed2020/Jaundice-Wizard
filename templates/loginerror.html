@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='log-sign (1).css') }}">
+    <title>Login</title>
+</head>
+<body>
+	<section class="header">
+		<nav>
+		  <img src="/static/images/logo.png" class="photo" alt="this is a logo">
+		  <input type="checkbox" id="check">
+		  <label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		  </label>
+		 <label class="logo">Jaundice Wizard</label>
+		 <ul>
+		  <li><a class="active"  href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+		  <li><a  href="/checkcasenull"><i class="fa fa-stethoscope" aria-hidden="true"></i>CheckCase</a></li>
+		  <li><a  href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>logIN</a></li>
+		  <li><a  href="/signin"><i class="fa fa-registered" aria-hidden="true"></i>Regriste</a></li>
+		</ul>
+	</nav>
+	<script>
+		let subMenu = document.getElementById("subMenu");
+		
+		function toggleMenu(){
+			subMenu.classList.toggle("open-menu");
+		}
+		</script>
+ <div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form method="Post" action="/logincheck">
+			<h1>Sign in</h1>
+			<span>or use your account</span>
+			<input type='text' placeholder="User Name" required name = "username" />	
+			<input type="email" placeholder="Email" required name="email" />
+			<input type="password" placeholder="Password" required name="password" />
+			<div class="container-themed-container"><h1 style="text-align: center;">{{prediction_text}}</h1></div>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<form class = "em" action="/signin">
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<div>
+				<button class="ghost" id="signIn">Sign Up</button>
+				</div>	
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
